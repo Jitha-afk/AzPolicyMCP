@@ -2,7 +2,9 @@
 Simple MCP server to help create Azure Policies for any resource type. 
 
 <context>
-# Overview <br>
+
+# Overview 
+
 This document outlines the requirements for an Azure Policy Model Context Protocol (MCP) Server. The primary goal of this server is to empower Large Language Models (LLMs) to assist users in generating, validating, *and deploying* Azure custom policies effectively. It solves the problem of LLMs generating potentially incorrect or non-compliant Azure policy JSON by providing tools to fetch relevant built-in policies as examples, validate the structure of generated policies against the official schema, *and manage policy assignments via the Azure REST API*. It also aims to assist the LLM in selecting the appropriate policy effect based on user intent (audit/deny vs. remediation). The target user is an LLM application (like a chatbot or code assistant) that needs to interact with Azure Policy definitions and assignments. The value lies in providing a standardized, reliable interface for LLMs to create, validate, and deploy accurate and compliant Azure policies based on user requests.
 
 # Core Features
@@ -69,7 +71,7 @@ The primary "user" of this MCP server is the LLM client application. The interac
 13. If validation (step 9) or deployment (step 11) fails, the LLM uses the error feedback to correct the policy/parameters and re-validates/re-attempts deployment.
 
 </context>
-<PRD>
+
 # Technical Architecture
 *   **Core Framework:** Python `mcp-sdk` using `FastMCP`.
 *   **Server Components:**
@@ -156,4 +158,4 @@ Focus was initially on getting policy retrieval working via the GitHub API. The 
 *   [Requests Library](https://requests.readthedocs.io/en/latest/)
 *   [jsonschema Library](https://python-jsonschema.readthedocs.io/en/stable/)
 *   **(New)** [azure-identity Library](https://learn.microsoft.com/en-us/python/api/azure-identity/azure.identity?view=azure-python)
-</PRD> 
+
