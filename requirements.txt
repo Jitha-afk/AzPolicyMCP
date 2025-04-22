@@ -1,0 +1,5 @@
+mcp[cli]
+requests
+jsonschema
+# Add other dependencies as needed, e.g.:
+# GitPython 
